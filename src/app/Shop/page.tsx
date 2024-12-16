@@ -71,7 +71,7 @@ export default function Shop() {
                     </div> <br /><hr className="bg-yellow-400"/>
                     <div className="mt-6 flex justify-center">
                 <Image
-                  src="/footer.png" // Replace this with the actual image file name in your public directory
+                  src="/Footer.png" // Replace this with the actual image file name in your public directory
                   alt="Footer Logo"
                   width={1200}
                   height={200}
