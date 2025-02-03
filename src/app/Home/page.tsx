@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Navbar from "../Navbar/page";
-
+<Navbar/>
 export default function Home() {
   return (
     <div className="bg-black min-h-screen flex flex-col items-center">
 
-        <Navbar />
+        
       {/* Container for the main content */}
       <div className="w-full max-w-[1320px]">
         {/* About Section */}

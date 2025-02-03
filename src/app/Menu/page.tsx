@@ -1,24 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
+import Navbar from "../Navbar/page"; // Ensure you are importing the Navbar correctly.
 
 export default function Menu() {
   return (
     <div>
       {/* Navbar Section */}
-      <div className="w-full h-[90px] bg-black flex items-center justify-between px-10">
-        {/* Navigation Links */}
-        <nav className="flex items-center space-x-8">
-          {["Home", "Menu", "Shop", "About", "Blog", "Contact"].map((item) => (
-            <Link
-              key={item}
-              href={`/${item}`}
-              className="text-white text-sm hover:text-yellow-500 transition duration-300"
-            >
-              {item}
-            </Link>
-          ))}
-        </nav>
+      <Navbar />
 
+      {/* Menu Section */}
+      <div className="w-full h-[90px] bg-black flex items-center justify-between px-4 md:px-10">
         {/* Right Section */}
         <div className="flex items-center space-x-4">
           <p className="text-white text-sm font-semibold">ShopNow</p>
@@ -54,54 +44,52 @@ export default function Menu() {
       </div>
 
       {/* Starter Section */}
-      <div className="flex justify-center mt-6">
-        <Image
-          src="/starter1.png"
-          alt="Starter"
-          width={720}
-          height={328}
-          className="rounded-md shadow-lg"
-        />
-      </div> <br />
-      <div className="flex justify-center mt-6">
-        <Image
-          src="/starter2.png"
-          alt="Starter"
-          width={720}
-          height={328}
-          className="rounded-md shadow-lg"
-        />
-      </div> <br />
-      <div className="">
-        <Image
-          src="/Clients.png"
-          alt="Starter"
-          width={1335}
-          height={200}
-          className="rounded-md shadow-lg"
-        />
-      </div> <br />
-      <div className="flex justify-center mt-6">
-        <Image
-          src="/starter3.png"
-          alt="Starter"
-          width={720}
-          height={328}
-          className="rounded-md shadow-lg"
-        />
-      </div> <br />
-      <div className="flex justify-center mt-6">
-        <Image
-          src="/starter4.png"
-          alt="Starter"
-          width={720}
-          height={328}
-          className="rounded-md shadow-lg"
-        />
-      </div> <br /> <br />
-      <div className="w-[1322px] h-[275px] justify-center justify-items-center">
-          <span className="font-bold text-black">We Work With The Best People Team Syed</span> <br /> <br /> <br />
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="flex justify-center">
           <Image
+            src="/starter1.png"
+            alt="Starter"
+            width={720}
+            height={328}
+            className="rounded-md shadow-lg w-full max-w-[320px]"
+          />
+        </div>
+        <div className="flex justify-center">
+          <Image
+            src="/starter2.png"
+            alt="Starter"
+            width={720}
+            height={328}
+            className="rounded-md shadow-lg w-full max-w-[320px]"
+          />
+        </div>
+        <div className="flex justify-center">
+          <Image
+            src="/starter3.png"
+            alt="Starter"
+            width={720}
+            height={328}
+            className="rounded-md shadow-lg w-full max-w-[320px]"
+          />
+        </div>
+        <div className="flex justify-center">
+          <Image
+            src="/starter4.png"
+            alt="Starter"
+            width={720}
+            height={328}
+            className="rounded-md shadow-lg w-full max-w-[320px]"
+          />
+        </div>
+      </div>
+
+      <br />
+
+      <div className="w-full px-4 md:px-10 text-center">
+        <span className="font-bold text-black">We Work With The Best People Team Syed</span>
+        <br />
+        <br />
+        <Image
           src="/Logo.png"
           alt="Logo"
           width={720}
@@ -109,33 +97,36 @@ export default function Menu() {
           className="rounded-md shadow-lg"
         />
       </div>
+
       {/* Footer Section */}
-            <footer className="w-full bg-black text-white py-10">
-              <div className="max-w-[1170px] mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4 md:space-y-0">
-                <span className="text-lg font-semibold text-center md:text-left">
-                  Still You Need Our Support By Team Syed?
-                </span>
-                <div className="flex space-x-2 items-center">
-                  <input
-                    className="p-3 rounded-md text-black w-[300px]"
-                    type="text"
-                    placeholder="Searching..."
-                  />
-                  <button className="bg-yellow-600 text-white px-4 py-2 rounded-md">
-                    Search
-                  </button>
-                </div>
-              </div> <br /><hr className="bg-yellow-400"/>
-              <div className="mt-6 flex justify-center">
+      <footer className="w-full bg-black text-white py-10 mt-12">
+        <div className="max-w-[1170px] mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4 md:space-y-0">
+          <span className="text-lg font-semibold text-center md:text-left">
+            Still You Need Our Support By Team Syed?
+          </span>
+          <div className="flex space-x-2 items-center">
+            <input
+              className="p-3 rounded-md text-black w-[300px] md:w-[400px]"
+              type="text"
+              placeholder="Searching..."
+            />
+            <button className="bg-yellow-600 text-white px-4 py-2 rounded-md">
+              Search
+            </button>
+          </div>
+        </div>
+        <br />
+        <hr className="bg-yellow-400" />
+        <div className="mt-6 flex justify-center">
           <Image
-            src="/footer.png" // Replace this with the actual image file name in your public directory
+            src="/footer.png" // Replace with actual footer image path
             alt="Footer Logo"
             width={1200}
             height={200}
             className="object-contain"
           />
         </div>
-            </footer>
+      </footer>
     </div>
   );
 }
